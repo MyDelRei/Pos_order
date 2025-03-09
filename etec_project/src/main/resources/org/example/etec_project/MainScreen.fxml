@@ -1,16 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.etec_project.MainScreenController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="955.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="308.0" layoutY="412.0" prefHeight="200.0" prefWidth="200.0" styleClass="body-border-pane-color" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="950.0" prefWidth="300.0" styleClass="side-bar" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="37.0" left="37.0" top="37.0" />
+               </BorderPane.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="141.0" prefWidth="300.0">
+                     <children>
+                        <ImageView fitHeight="84.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img_pos_etec/IMAGE%202025-03-09%2009:30:50.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="13.0" right="13.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="13.0" right="13.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Dashboard" textAlignment="CENTER">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="nav-label" />
+                     </styleClass>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="POS" textAlignment="CENTER">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="nav-label" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="13.0" right="13.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Inventory" textAlignment="CENTER">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="nav-label" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="13.0" right="13.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Report" textAlignment="CENTER">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="nav-label" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="13.0" right="13.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Setting" textAlignment="CENTER">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="nav-label" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="13.0" right="13.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-btn-logout" text="Logout" textAlignment="CENTER">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="nav-label" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets left="13.0" right="13.0" top="285.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

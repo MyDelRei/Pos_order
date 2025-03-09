@@ -1,0 +1,45 @@
+.body-border-pane-color{
+    -fx-background-color:#F0F0F0;
+
+}
+.side-bar{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius:10px;
+}
+
+.icon-sizing {
+    -fx-font-size: 40px;
+    -fx-fill: #8B8B8B;
+}
+/* Existing button styling */
+.nav-btn {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px;
+}
+
+.nav-btn:hover {
+    -fx-background-color: #DE8033;
+    -fx-background-radius: 10px;
+    -fx-text-fill: #FFFFFF; /* White text on hover */
+}
+
+/* New Label styling */
+.nav-label {
+    -fx-text-fill: #000000; /* Default black text */
+    /* Optional: adjust size */
+}
+
+.nav-label:hover {
+    -fx-text-fill: #FFFFFF; /* White text on hover, matches button */
+}
+
+.nav-btn-logout {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px;
+}
+
+.nav-btn-logout:hover {
+    -fx-background-color: red;
+    -fx-background-radius: 10px;
+    -fx-text-fill: #FFFFFF; /* White text on hover */
+}

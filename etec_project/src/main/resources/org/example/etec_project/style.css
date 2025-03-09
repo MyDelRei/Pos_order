@@ -43,3 +43,6 @@
     -fx-background-radius: 10px;
     -fx-text-fill: #FFFFFF; /* White text on hover */
 }
+.test{
+    -fx-background-color:#453723;
+}

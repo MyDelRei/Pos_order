@@ -23,11 +23,7 @@
     -fx-text-fill: #FFFFFF; /* White text on hover */
 }
 
-/* New Label styling */
-.nav-label {
-    -fx-text-fill: #000000; /* Default black text */
-    /* Optional: adjust size */
-}
+
 
 .nav-label:hover {
     -fx-text-fill: #FFFFFF; /* White text on hover, matches button */
@@ -46,3 +42,8 @@
 .test{
     -fx-background-color:#453723;
 }
+
+
+
+
+

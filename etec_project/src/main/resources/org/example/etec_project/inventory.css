@@ -1,0 +1,152 @@
+.body-border-pane-color{
+    -fx-background-color:#F0F0F0;
+}
+.btn {
+    -fx-background-color: #DE8033;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white; /* Force white text */
+}
+
+.btn:hover {
+    -fx-background-color: #be6141;
+    -fx-text-fill: white; /* Keep text white on hover */
+}
+
+.btn-confirm-order {
+    -fx-background-color: #DE8033;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white; /* Force white text */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 2);
+}
+.btn-confirm-order:hover {
+    -fx-background-color: #be6141;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white; /* Force white text */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.2, 0, 2);
+}
+
+/* Apply white text color to all Labels inside buttons */
+.btn Label,
+.btn-confirm-order Label {
+    -fx-text-fill: white !important; /* Force override any inherited color */
+}
+
+
+.order-detail-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px;
+}
+
+.txt-cash {
+    -fx-border-color: #DE8033;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+    -fx-pref-height: 45px;
+}
+
+.txt-cash:focused {
+    -fx-border-color: #DE8033;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+    -fx-pref-height: 45px;
+}
+.search-box{
+    -fx-background-color: #FFFFFF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 50px;
+    -fx-pref-height: 50px;
+}
+.search-box-txt{
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+    -fx-pref-height: 45px;
+}
+.search-box-txt:focused{
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+    -fx-pref-height: 45px;
+}
+.category-btn{
+    -fx-background-color:#c2c9d6;
+    -fx-background-radius:10px;
+    -fx-text-fill: white;
+}
+.category-btn:hover{
+    -fx-background-color:#DE8033;
+    -fx-background-radius:10px;
+    -fx-text-fill: white;
+}
+
+.btn Label,
+.category-btn Label {
+    -fx-text-fill: white !important; /* Force override any inherited color */
+}
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 1px;
+    -fx-padding: 5px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6b7280;
+    -fx-padding: 8px;
+}
+
+.table-row-cell {
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 5px;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9fafb;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e0f2fe;
+    -fx-text-fill: #000000;
+}
+
+/* Days Remaining Colors */
+.red-cell {
+    -fx-text-fill: #dc2626;
+    -fx-font-weight: bold;
+}
+
+.orange-cell {
+    -fx-text-fill: #ea580c;
+    -fx-font-weight: bold;
+}
+
+.green-cell {
+    -fx-text-fill: #16a34a;
+    -fx-font-weight: bold;
+}
+
+
+

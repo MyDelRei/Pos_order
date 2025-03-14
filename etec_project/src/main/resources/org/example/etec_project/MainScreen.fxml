@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="955.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.etec_project.MainScreenController">
    <children>
       <BorderPane layoutX="308.0" layoutY="412.0" prefHeight="200.0" prefWidth="200.0" styleClass="body-border-pane-color" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -47,13 +47,19 @@
                         <String fx:value="nav-btn" />
                         <String fx:value="nav-label" />
                      </styleClass>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                  <HBox fx:id="PosBtn" alignment="CENTER" onMouseClicked="#PosBtnClick" prefHeight="60.0" prefWidth="300.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="POS" textAlignment="CENTER">
                            <font>
                               <Font name="Poppins Medium" size="24.0" />
                            </font>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
                         </Label>
                      </children>
                      <styleClass>
@@ -63,8 +69,11 @@
                      <VBox.margin>
                         <Insets bottom="15.0" left="13.0" right="13.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                  <HBox alignment="CENTER" onMouseClicked="#InventoryBtnClick" prefHeight="60.0" prefWidth="300.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Inventory" textAlignment="CENTER">
                            <font>
@@ -79,6 +88,9 @@
                      <VBox.margin>
                         <Insets bottom="15.0" left="13.0" right="13.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
                      <children>
@@ -95,6 +107,9 @@
                      <VBox.margin>
                         <Insets bottom="15.0" left="13.0" right="13.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
                      <children>
@@ -111,6 +126,9 @@
                      <VBox.margin>
                         <Insets bottom="15.0" left="13.0" right="13.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
                      <children>
@@ -125,12 +143,19 @@
                         <String fx:value="nav-label" />
                      </styleClass>
                      <VBox.margin>
-                        <Insets left="13.0" right="13.0" top="285.0" />
+                        <Insets bottom="20.0" left="13.0" right="13.0" top="272.0" />
                      </VBox.margin>
                   </HBox>
                </children>
             </VBox>
          </left>
+         <center>
+            <AnchorPane fx:id="Content_pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="35.0" left="20.0" right="20.0" top="35.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

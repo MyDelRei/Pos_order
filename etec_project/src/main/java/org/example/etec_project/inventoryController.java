@@ -20,4 +20,7 @@ public class inventoryController {
     @FXML
     private TableColumn<String, String> qty_c;
 
+    @FXML
+    private TableColumn<?, ?> category_col;
+
 }

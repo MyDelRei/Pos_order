@@ -93,7 +93,7 @@
                         <TableColumn fx:id="price_col" prefWidth="75.0" text="Price" />
                         <TableColumn fx:id="barcode_col" prefWidth="75.0" text="Barcode" />
                         <TableColumn fx:id="Location_col" prefWidth="75.0" text="Location" />
-                        <TableColumn prefWidth="75.0" text="Category" />
+                        <TableColumn fx:id="category_col" prefWidth="75.0" text="Category" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -24,7 +24,7 @@
                      <children>
                         <ImageView fitHeight="84.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img_pos_etec/IMAGE%202025-03-09%2009:30:50.jpg" />
+                              <Image url="@img_pos_etec/logo.jpg" />
                            </image>
                         </ImageView>
                      </children>

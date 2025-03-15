@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1124.0" styleClass="body-border-pane-color" stylesheets="@Pos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1124.0" styleClass="body-border-pane-color" stylesheets="@Pos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.etec_project.PosController">
    <right>
       <VBox alignment="TOP_CENTER" prefHeight="795.0" prefWidth="419.0" styleClass="order-detail-bar" BorderPane.alignment="TOP_LEFT">
          <children>
@@ -30,10 +30,13 @@
             </Label>
             <VBox prefHeight="312.0" prefWidth="399.0">
                <children>
-                  <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                  <TableView fx:id="orderListTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn fx:id="productname_orderlist_col" prefWidth="102.08380126953125" text="Product" />
+                      <TableColumn fx:id="deductCol" prefWidth="54.60211181640625" />
+                        <TableColumn fx:id="qtyorderList_col" prefWidth="79.39788818359375" text="qty" />
+                        <TableColumn fx:id="PlusCol" prefWidth="55.261962890625" />
+                        <TableColumn fx:id="TotalorderListCol" prefWidth="78.12603759765625" text="Total" />
                     </columns>
                   </TableView>
                </children>
@@ -50,7 +53,7 @@
                <children>
                   <HBox prefHeight="27.0" prefWidth="419.0">
                      <children>
-                        <Label text="Transaction Number">
+                        <Label prefHeight="27.0" prefWidth="192.0" text="TransactionNo">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -58,10 +61,13 @@
                               <Insets right="85.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="#20250312001">
+                        <Label fx:id="lblTransaction" alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="180.0" text="#20250312001">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="4.0" />
+                           </HBox.margin>
                         </Label>
                      </children>
                   </HBox>
@@ -75,7 +81,7 @@
                               <Insets right="242.0" />
                            </HBox.margin>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="79.0" text="\$5.00">
+                        <Label fx:id="SubTotalLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="79.0" text="\$5.00">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -92,7 +98,7 @@
                               <Insets right="258.0" />
                            </HBox.margin>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="69.0" text="0 %">
+                        <Label fx:id="DiscountLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="69.0" text="0 %">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -109,7 +115,7 @@
                               <Insets right="268.0" />
                            </HBox.margin>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="94.0" text="\$5.00">
+                        <Label fx:id="TotalLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="94.0" text="\$5.00">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -268,7 +274,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="71.0" prefWidth="562.0" styleClass="order-detail-bar">
                <children>
-                  <HBox alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
+                  <HBox fx:id="allBtn" alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
                      <children>
                         <Label text="All" textFill="WHITE">
                            <font>
@@ -280,7 +286,7 @@
                         <Insets right="18.0" />
                      </HBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
+                  <HBox fx:id="FoodBtn" alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
                      <children>
                         <Label text="Food" textFill="WHITE">
                            <font>
@@ -292,7 +298,7 @@
                         <Insets right="18.0" />
                      </HBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
+                  <HBox fx:id="DrinkBtn" alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
                      <children>
                         <Label text="Drink" textFill="WHITE">
                            <font>
@@ -304,7 +310,7 @@
                         <Insets right="18.0" />
                      </HBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="51.0" prefWidth="184.0" styleClass="category-btn">
+                  <HBox fx:id="DairyProductBtn" alignment="CENTER" prefHeight="51.0" prefWidth="184.0" styleClass="category-btn">
                      <children>
                         <Label text="Dairy Product" textFill="WHITE">
                            <font>
@@ -326,10 +332,15 @@
             </HBox>
             <VBox prefHeight="564.0" prefWidth="684.0">
                <children>
-                  <TableView prefHeight="674.0" prefWidth="684.0" VBox.vgrow="ALWAYS">
+                  <TableView fx:id="InventoryTable" nodeOrientation="LEFT_TO_RIGHT" prefHeight="674.0" prefWidth="684.0" VBox.vgrow="ALWAYS">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="C1" />
-                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="Pro_name_col" prefWidth="110.0792293548584" text="Name" />
+                        <TableColumn fx:id="LocationCol" prefWidth="114.887939453125" text="Location" />
+                        <TableColumn fx:id="QtyCol" prefWidth="59.12440490722656" text="Qty" />
+                        <TableColumn fx:id="Exp_date_col" prefWidth="88.62445068359375" text="Expire date" />
+                        <TableColumn fx:id="BarcodeCol" prefWidth="124.56845092773438" text="barcode" />
+                        <TableColumn fx:id="PriceCol" prefWidth="73.56842041015625" text="price" />
+                        <TableColumn fx:id="Add" prefWidth="84.43157958984375" text="action" />
                      </columns>
                   </TableView>
                </children>

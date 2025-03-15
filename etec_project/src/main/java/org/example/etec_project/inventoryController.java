@@ -21,6 +21,6 @@ public class inventoryController {
     private TableColumn<String, String> qty_c;
 
     @FXML
-    private TableColumn<?, ?> category_col;
+    private TableColumn<String, String> category_col;
 
 }

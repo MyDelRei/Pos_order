@@ -61,7 +61,7 @@
                               <Insets right="85.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="lblTransaction" alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="180.0" text="#20250312001">
+                        <Label fx:id="lblTransaction" alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="180.0" text="#">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -81,7 +81,7 @@
                               <Insets right="242.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="SubTotalLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="79.0" text="\$5.00">
+                        <Label fx:id="SubTotalLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="79.0" text="\$">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -98,7 +98,7 @@
                               <Insets right="258.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="DiscountLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="69.0" text="0 %">
+                        <Label fx:id="DiscountLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="69.0" text="0">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -115,7 +115,7 @@
                               <Insets right="268.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="TotalLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="94.0" text="\$5.00">
+                        <Label fx:id="TotalLbl" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="94.0" text="\$">
                            <font>
                               <Font name="Poppins SemiBold" size="18.0" />
                            </font>
@@ -130,7 +130,7 @@
             <Line endX="284.353271484375" endY="0.20707780122756958" startX="-123.96958923339844" startY="1.4999710321426392" />
             <VBox alignment="CENTER" prefHeight="172.0" prefWidth="419.0">
                <children>
-                  <TextField promptText="     CASH" styleClass="txt-cash">
+                  <TextField fx:id="txtCash" promptText="     CASH" styleClass="txt-cash">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -138,7 +138,7 @@
                         <Font name="Poppins SemiBold" size="24.0" />
                      </font>
                   </TextField>
-                  <TextField promptText="     QR" styleClass="txt-cash">
+                  <TextField fx:id="txtQR" promptText="     QR" styleClass="txt-cash">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -146,7 +146,7 @@
                         <Font name="Poppins Bold" size="24.0" />
                      </font>
                   </TextField>
-                  <TextField promptText="     Card" styleClass="txt-cash">
+                  <TextField fx:id="txtCard" promptText="     Card" styleClass="txt-cash">
                      <font>
                         <Font name="Poppins Bold" size="24.0" />
                      </font>
@@ -156,7 +156,7 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="71.0" prefWidth="419.0" styleClass="btn-confirm-order">
+            <HBox fx:id="btnConfirmPayment" alignment="CENTER" onMouseClicked="#handleConfirmPayment" prefHeight="71.0" prefWidth="419.0" styleClass="btn-confirm-order">
                <children>
                   <Label text="confirm order">
                      <font>

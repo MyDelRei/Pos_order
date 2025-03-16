@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="report" language="java" columnCount="1" pageWidth="169" pageHeight="501" columnWidth="129" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="159b8f98-471a-4e80-922e-b58bb43901ef">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString><![CDATA[]]></queryString>
+
+	<field name="Name" class="java.lang.String"/>
+	<field name="qty" class="java.lang.Double"/>
+	<field name="Total" class="java.lang.Double"/>
+	<field name="Discount" class="java.lang.Double"/>
+	<field name="TransNo" class="java.lang.String"/>
+	<field name="TotalA" class="java.lang.String"/>
+	<field name="Payment" class="java.lang.String"/>
+	<field name="Paid" class="java.lang.Double"/>
+	<field name="change" class="java.lang.Double"/>
+
+	<background>
+		<band/>
+	</background>
+
+	<title>
+		<band height="60">
+			<staticText>
+				<reportElement x="14" y="10" width="100" height="20"/>
+				<text><![CDATA[MartMe]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="14" y="30" width="100" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="20"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="30" height="20"/>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="0" width="39" height="20"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="60" height="20"/>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="30" height="20"/>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="0" width="39" height="20"/>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+
+	<summary>
+		<band height="80">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="15"/>
+				<text><![CDATA[TransNo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="0" width="80" height="15"/>
+				<textFieldExpression><![CDATA[$F{TransNo}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="0" y="20" width="50" height="15"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="20" width="80" height="15"/>
+				<textFieldExpression><![CDATA[$F{TotalA}]]></textFieldExpression>
+			</textField>
+
+			<staticText>
+				<reportElement x="0" y="40" width="50" height="15"/>
+				<text><![CDATA[Paid]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="40" width="80" height="15"/>
+				<textFieldExpression><![CDATA[$F{Paid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
+

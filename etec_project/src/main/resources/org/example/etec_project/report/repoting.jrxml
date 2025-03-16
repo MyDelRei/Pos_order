@@ -1,0 +1,105 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="repoting" language="java" columnCount="1" pageWidth="254" pageHeight="842" orientation="Landscape" columnWidth="214" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5be2c19f-f3d4-45fe-a0d2-29d1124d5868">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="Name" class="java.lang.String"/>
+	<field name="qty" class="java.lang.Integer"/>
+	<field name="Total" class="java.lang.Double"/>
+	<field name="TransNo" class="java.lang.String"/>
+	<field name="Discount" class="java.lang.Double"/>
+	<field name="Payment" class="java.lang.String"/>
+	<field name="Paid" class="java.lang.Double"/>
+	<field name="change" class="java.lang.Double"/>
+	<field name="TotalA" class="java.lang.String"/>
+	<background splitType="Stretch"/>
+	<title height="106" splitType="Stretch">
+		<element kind="staticText" uuid="85982c89-1f7b-421e-b352-38297186e4c1" x="50" y="10" width="100" height="30" fontSize="18.0" hTextAlign="Center">
+			<text><![CDATA[MartMe]]></text>
+		</element>
+		<element kind="textField" uuid="09452f75-6b21-4333-882b-d70e4e7cb2b7" x="50" y="40" width="100" height="20" pattern="MMMMM dd, yyyy" hTextAlign="Center">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="textField" uuid="e3e05d3a-5e8e-460b-9448-d69b793e9dc5" x="50" y="60" width="100" height="30" pattern="HH:mm" hTextAlign="Center">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</title>
+	<columnHeader height="21" splitType="Stretch">
+		<element kind="staticText" uuid="8ddcfa0b-f426-43c4-a268-0f2c19cd8025" x="0" y="0" width="114" height="20" fontSize="8.0" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5d6413a4-417a-47bd-bcfe-9876896d6fc1"/>
+		</element>
+		<element kind="staticText" uuid="d7977729-b97d-406b-a1ad-f2377f01f81a" x="115" y="0" width="28" height="20" fontSize="8.0" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[qty]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="329e0ed5-8584-4442-b952-3056124b4e05"/>
+		</element>
+		<element kind="staticText" uuid="3729b1d4-8907-4fab-a95e-fc88f93dd6af" x="143" y="0" width="71" height="20" fontSize="8.0" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Total]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e0f0181-0fa9-4e97-94fe-8b403f9e7d6d"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<element kind="textField" uuid="50c8d0d9-78f3-4301-9df2-8a6c8f1fdb63" x="0" y="0" width="114" height="30" fontSize="8.0">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5d6413a4-417a-47bd-bcfe-9876896d6fc1"/>
+			</element>
+			<element kind="textField" uuid="277dc467-4b89-42e8-b432-20daaa9d133f" x="115" y="0" width="28" height="30" fontSize="8.0">
+				<expression><![CDATA[$F{qty}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="329e0ed5-8584-4442-b952-3056124b4e05"/>
+			</element>
+			<element kind="textField" uuid="39030d96-baf0-4000-a364-cb1f713ada8a" x="143" y="0" width="71" height="30" fontSize="8.0">
+				<expression><![CDATA[$F{Total}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e0f0181-0fa9-4e97-94fe-8b403f9e7d6d"/>
+			</element>
+		</band>
+	</detail>
+	<summary height="272" splitType="Stretch">
+		<element kind="textField" uuid="2bb11019-3cb0-4b7b-9354-33487e378246" x="147" y="0" width="79" height="30" fontSize="8.0" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{TransNo}]]></expression>
+		</element>
+		<element kind="textField" uuid="80e01b24-c840-490f-a69e-a28bc033e37b" x="150" y="60" width="74" height="30" fontSize="8.0" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{Discount}]]></expression>
+		</element>
+		<element kind="textField" uuid="6f1d81a8-df33-44f6-8f7f-6e512315264d" x="150" y="120" width="74" height="30" fontSize="8.0" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{Payment}]]></expression>
+		</element>
+		<element kind="textField" uuid="04ad78a4-c34d-46e4-82a1-ca3b133dd376" x="150" y="90" width="74" height="30" fontSize="8.0" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{Paid}]]></expression>
+		</element>
+		<element kind="textField" uuid="76cbada2-96ef-49dd-9c97-a95ff4ea9b6e" x="150" y="150" width="74" height="30" fontSize="8.0" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{change}]]></expression>
+		</element>
+		<element kind="textField" uuid="6a20ee8a-d87d-4d54-8b50-39a9849ba298" x="150" y="30" width="74" height="30" fontSize="8.0" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$F{TotalA}]]></expression>
+		</element>
+		<element kind="staticText" uuid="3fa59a39-b8a2-481c-94f8-b4d355811c56" x="-10" y="0" width="100" height="30" fontSize="8.0" vTextAlign="Middle">
+			<text><![CDATA[Transaction :]]></text>
+		</element>
+		<element kind="staticText" uuid="62c9caa0-ae27-4330-afdc-6b5314e44242" x="-10" y="30" width="100" height="30" fontSize="8.0" vTextAlign="Middle">
+			<text><![CDATA[Total :]]></text>
+		</element>
+		<element kind="staticText" uuid="3b532de6-3e67-498a-be30-3d3e30b1ee7e" x="-10" y="60" width="100" height="30" fontSize="8.0" vTextAlign="Middle">
+			<text><![CDATA[Discount :]]></text>
+		</element>
+		<element kind="staticText" uuid="69e2d0cc-0ac0-4c82-aeb1-e71a593b5489" x="-10" y="90" width="100" height="30" fontSize="8.0" vTextAlign="Middle">
+			<text><![CDATA[Paid :]]></text>
+		</element>
+		<element kind="staticText" uuid="d03187da-796c-4bb0-8a32-d5471984177f" x="-10" y="120" width="100" height="30" fontSize="8.0" vTextAlign="Middle">
+			<text><![CDATA[Payment :]]></text>
+		</element>
+		<element kind="staticText" uuid="cf37f2ef-8506-4423-a21f-cf3acc838103" x="-10" y="150" width="100" height="30" fontSize="8.0" vTextAlign="Middle">
+			<text><![CDATA[Changes]]></text>
+		</element>
+		<element kind="staticText" uuid="995c5a05-b678-49c8-a719-38c9b20fbf7c" x="19" y="200" width="184" height="30" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Thank for shopping with us]]></text>
+		</element>
+	</summary>
+</jasperReport>

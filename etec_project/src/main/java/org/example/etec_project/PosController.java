@@ -3,11 +3,17 @@ package org.example.etec_project;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import org.example.etec_project.models.OrderItem;
 import org.example.etec_project.models.inventoryItem;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -80,6 +86,13 @@ public class PosController {
     @FXML
     public HBox allBtn;
 
+    @FXML
+    private TextField searchTxt;
+
+
+    @FXML
+    private HBox btnAddDiscount;
+
     private ObservableList<inventoryItem> inventoryList = FXCollections.observableArrayList();
     private ObservableList<OrderItem> orderList = FXCollections.observableArrayList();
     private Connection conn = DBConnection.instance.getConnection();
@@ -100,6 +113,15 @@ public class PosController {
 
         // Event handler for the "All" button (to load all categories)
         allBtn.setOnMouseClicked(event -> loadInventoryData());
+
+        searchTxt.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && !newValue.isEmpty()) {
+                searchProductByBarcode(newValue); // Call search method
+            } else {
+                loadInventoryData();  // Reload the inventory data if search is cleared
+            }
+        });
+
 
         Add.setCellFactory(param -> {
             TableCell<inventoryItem, Void> cell = new TableCell<>() {
@@ -355,6 +377,88 @@ public class PosController {
         TotalLbl.setText(String.format("$ %.2f", total));
         DiscountLbl.setText(String.format("$ %.2f", discount));
     }
+    @FXML
+    private void openDiscountForm() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("DiscountOverlay.fxml"));
+            Parent root = loader.load();
+
+            DiscountController discountController = loader.getController();
+            discountController.settotal(Double.parseDouble(TotalLbl.getText().replace("$", "").trim()), this);
+
+
+            // Get the current stage (POS screen)
+            Stage posStage = (Stage) TotalLbl.getScene().getWindow();
+
+            // Create a new Stage for overlay
+            Stage overlayStage = new Stage();
+            overlayStage.initOwner(posStage);
+
+            // Center the overlay relative to POS screen
+            overlayStage.setX(posStage.getX() + (posStage.getWidth() - 382) / 2);
+            overlayStage.setY(posStage.getY() + (posStage.getHeight() - 279) / 2);
+
+            Scene scene = new Scene(root);
+            overlayStage.setScene(scene);
+            overlayStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public double getSubtotal() {
+        return orderList.stream()
+                .mapToDouble(orderItem -> orderItem.getQuantity() * orderItem.getUnitPrice())
+                .sum();
+    }
+
+    public void applyDiscount(double discount) {
+        double VAT = 0.01;
+        double subtotal = getSubtotal();
+        double vatAmount = subtotal * VAT;
+        double Total = subtotal + vatAmount - discount;
+
+        SubTotalLbl.setText(String.format("$ %.2f",subtotal));
+        TotalLbl.setText(String.format("$ %.2f", Total));
+        DiscountLbl.setText(String.format("$ %.2f", discount));
+    }
+
+
+    private void searchProductByBarcode(String barcode) {
+        inventoryList.clear();  // Clear the existing inventory list to load new results
+        String query = "SELECT * FROM inventory_display WHERE barcode LIKE ?";  // Use LIKE for partial matches
+
+        try (PreparedStatement pst = conn.prepareStatement(query)) {
+            pst.setString(1, "%" + barcode + "%"); // Set the barcode parameter for search
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                inventoryList.add(new inventoryItem(
+                        rs.getString("product_name"),
+                        rs.getString("location"),
+                        rs.getInt("quantity"),
+                        rs.getString("expire_date"),
+                        rs.getString("barcode"),
+                        rs.getDouble("price")
+                ));
+            }
+
+            InventoryTable.setItems(inventoryList);  // Update the table with the search results
+
+            // Mapping columns to model properties again
+            Pro_name_col.setCellValueFactory(new PropertyValueFactory<>("productName"));
+            LocationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+            QtyCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+            Exp_date_col.setCellValueFactory(new PropertyValueFactory<>("expireDate"));
+            BarcodeCol.setCellValueFactory(new PropertyValueFactory<>("barcode"));
+            PriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 

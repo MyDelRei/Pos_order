@@ -26,7 +26,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="71.0" prefWidth="562.0" styleClass="order-detail-bar">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
+                        <HBox fx:id="btnAll" alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
                            <children>
                               <Label text="All" textFill="WHITE">
                                  <font>
@@ -38,7 +38,7 @@
                               <Insets right="18.0" />
                            </HBox.margin>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
+                        <HBox fx:id="btnFood" alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
                            <children>
                               <Label text="Food" textFill="WHITE">
                                  <font>
@@ -50,7 +50,7 @@
                               <Insets right="18.0" />
                            </HBox.margin>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
+                        <HBox fx:id="btnDrink" alignment="CENTER" prefHeight="71.0" prefWidth="94.0" styleClass="category-btn">
                            <children>
                               <Label text="Drink" textFill="WHITE">
                                  <font>
@@ -62,7 +62,7 @@
                               <Insets right="18.0" />
                            </HBox.margin>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="184.0" styleClass="category-btn">
+                        <HBox fx:id="btnDairyProduct" alignment="CENTER" prefHeight="51.0" prefWidth="184.0" styleClass="category-btn">
                            <children>
                               <Label text="Dairy Product" textFill="WHITE">
                                  <font>
@@ -86,14 +86,14 @@
             </HBox>
             <VBox prefHeight="638.0" prefWidth="1124.0">
                <children>
-                  <TableView prefHeight="674.0" prefWidth="684.0">
+                  <TableView fx:id="InventoryTable" prefHeight="674.0" prefWidth="684.0">
                      <columns>
                         <TableColumn fx:id="product_name_col" prefWidth="127.19997596740723" text="Product Name" />
                         <TableColumn fx:id="qty_col" prefWidth="24.000030517578125" text="Qty" />
                         <TableColumn fx:id="price_col" prefWidth="75.0" text="Price" />
                         <TableColumn fx:id="barcode_col" prefWidth="75.0" text="Barcode" />
                         <TableColumn fx:id="Location_col" prefWidth="75.0" text="Location" />
-                        <TableColumn prefWidth="75.0" text="Category" />
+                        <TableColumn fx:id="expire_date_col" prefWidth="75.0" text="Expire date" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

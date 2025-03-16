@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="279.0" prefWidth="382.0" stylesheets="@Pos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.etec_project.DiscountController">
+   <children>
+      <BorderPane layoutX="-13.0" layoutY="-6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="459.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Discount">
+                     <font>
+                        <Font name="Poppins Black" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="76.0" prefWidth="385.0">
+                     <children>
+                        <VBox prefHeight="76.0" prefWidth="328.0">
+                           <children>
+                              <Label text="Sub total">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtSubTotal" styleClass="txt-cash">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="76.0" prefWidth="385.0">
+                     <children>
+                        <VBox prefHeight="76.0" prefWidth="329.0">
+                           <children>
+                              <Label text="Discount">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtDiscount" promptText="\%" styleClass="txt-cash" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="388.0">
+                     <children>
+                        <Pane fx:id="btnConfirm" onMouseClicked="#applyDiscount" prefHeight="39.0" prefWidth="329.0" styleClass="btn-confirm-order">
+                           <children>
+                              <Label alignment="CENTER" layoutX="66.0" layoutY="9.0" prefHeight="19.0" prefWidth="197.0" text="Confirm">
+                                 <font>
+                                    <Font name="Poppins Black" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="18.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Pane>
+                     </children>
+                     <VBox.margin>
+                        <Insets right="-6.0" top="6.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

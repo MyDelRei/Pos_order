@@ -24,12 +24,17 @@ public class DBConnection {
     }
 
     public Connection getConnection() {
+        if(connection==null){
+            try{        //jbc:mysql://localhost:3306/testing __original syntax__
+                String url = "jdbc:mariadb://"+HostName+":"+port+"/"+DB;
+                connection = DriverManager.getConnection(url,Username,password);
+                System.out.println("success");
+            }
+            catch(SQLException e){
+                e.printStackTrace();
+            }
+        }
         return connection;
-    }
-
-    public static void main(String[] args){
-        DBConnection.instance.getConnection();
-
     }
 
 }

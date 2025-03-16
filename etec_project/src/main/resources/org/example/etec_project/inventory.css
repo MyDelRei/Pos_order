@@ -94,59 +94,56 @@
 }
 .table-view {
     -fx-background-color: #ffffff;
-    -fx-border-color: #dddddd;
-    -fx-border-width: 1px;
-    -fx-padding: 5px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;  /* Increased padding around the TableView */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 6, 0, 2, 2);
 }
 
 .table-view .column-header-background {
-    -fx-background-color: #f9fafb;
-    -fx-border-color: #e5e7eb;
-    -fx-border-width: 0 0 1px 0;
+    -fx-background-color: #f3f4f6; /* Tailwind's gray-200 */
+    -fx-border-radius: 8px 8px 0px 0px;
 }
 
 .table-view .column-header {
     -fx-background-color: transparent;
-    -fx-font-size: 12px;
+    -fx-font-size: 14px;  /* Increased font size for column headers */
     -fx-font-weight: bold;
-    -fx-text-fill: #6b7280;
-    -fx-padding: 8px;
+    -fx-text-fill: #374151; /* Tailwind's gray-700 */
+    -fx-padding: 15px;  /* Increased padding in the header */
+    -fx-alignment: center; /* Center text in header */
 }
 
-.table-row-cell {
-    -fx-border-color: #e5e7eb;
-    -fx-border-width: 0 0 1px 0;
-    -fx-padding: 5px;
+.table-view .table-row-cell {
+    -fx-border-color: transparent;  /* Removes the border around rows */
 }
 
-.table-row-cell:odd {
-    -fx-background-color: #f9fafb;
+.table-view .table-row-cell:selected .text {
+    -fx-fill: #ffffff;
 }
 
-.table-row-cell:even {
-    -fx-background-color: #ffffff;
+.table-view .table-cell {
+    -fx-font-size: 10px;  /* Increased font size for cell content */
+    -fx-text-fill: #374151;
+    -fx-padding: 12px;  /* Increased padding for bigger cells */
+    -fx-border-color: transparent; /* Removes the borders for individual cells */
+    -fx-alignment: center; /* Center text in cells */
 }
 
-.table-row-cell:selected {
-    -fx-background-color: #e0f2fe;
-    -fx-text-fill: #000000;
+/* Scroll bar adjustments */
+.table-view .scroll-bar {
+    -fx-background-color: transparent;
 }
 
-/* Days Remaining Colors */
-.red-cell {
-    -fx-text-fill: #dc2626;
-    -fx-font-weight: bold;
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #d1d5db; /* Tailwind's gray-400 */
+    -fx-background-radius: 5px;
 }
 
-.orange-cell {
-    -fx-text-fill: #ea580c;
-    -fx-font-weight: bold;
+.table-view .scroll-bar .thumb:hover {
+    -fx-background-color: #9ca3af; /* Tailwind's gray-500 */
 }
 
-.green-cell {
-    -fx-text-fill: #16a34a;
-    -fx-font-weight: bold;
-}
 
 
 

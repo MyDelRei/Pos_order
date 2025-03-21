@@ -160,4 +160,11 @@
 
 }
 
+.rounded-image {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-clip: rect(0px, 10px, 10px, 0px);
+}
+
+
 

@@ -42,6 +42,23 @@
 .test{
     -fx-background-color:#453723;
 }
+.flashCard{
+    -fx-background-color:#FFF;
+    -fx-background-radius: 10px;  /* Rounded corners */
+    -fx-border-color: white;       /* Border color */
+    -fx-border-width: 2px;         /* Border thickness */
+    -fx-border-radius: 20px;
+
+}
+.flashCard-icon{
+    -fx-background-color:#F4F4F6;
+    -fx-background-radius: 100%;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+
+}
+
 
 
 

@@ -117,6 +117,7 @@ public class PosController {
     @FXML
     private HBox btnAddDiscount;
 
+
     private ObservableList<inventoryItem> inventoryList = FXCollections.observableArrayList();
     private ObservableList<OrderItem> orderList = FXCollections.observableArrayList();
     private Connection conn = DBConnection.instance.getConnection();

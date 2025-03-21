@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.etec_project.MainScreenController">
+<AnchorPane fx:id="Content_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.etec_project.MainScreenController">
    <children>
       <BorderPane layoutX="308.0" layoutY="412.0" prefHeight="200.0" prefWidth="200.0" styleClass="body-border-pane-color" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -32,7 +32,7 @@
                         <Insets left="13.0" right="13.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                  <HBox fx:id="DashBoardBtn" alignment="CENTER" onMouseClicked="#DashBoardBtnClick" prefHeight="60.0" prefWidth="300.0">
                      <VBox.margin>
                         <Insets bottom="15.0" left="13.0" right="13.0" />
                      </VBox.margin>
@@ -73,7 +73,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" onMouseClicked="#InventoryBtnClick" prefHeight="60.0" prefWidth="300.0">
+                  <HBox fx:id="InventoryBtn" alignment="CENTER" onMouseClicked="#InventoryBtnClick" prefHeight="60.0" prefWidth="300.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Inventory" textAlignment="CENTER">
                            <font>
@@ -92,9 +92,28 @@
                         <Insets top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                  <HBox fx:id="ReturnBtn" alignment="CENTER" onMouseClicked="#refundButtonClick" prefHeight="60.0" prefWidth="300.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Report" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Refund &amp; return" textAlignment="CENTER">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="nav-label" />
+                     </styleClass>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="ReportBtn" alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" onMouseClicked="#ReportBtnClick" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Report" textAlignment="CENTER">
                            <font>
                               <Font name="Poppins Medium" size="24.0" />
                            </font>
@@ -105,13 +124,13 @@
                         <String fx:value="nav-label" />
                      </styleClass>
                      <VBox.margin>
-                        <Insets bottom="15.0" left="13.0" right="13.0" />
+                        <Insets bottom="15.0" left="13.0" right="13.0" top="15.0" />
                      </VBox.margin>
                      <padding>
                         <Insets top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                  <HBox fx:id="SettingBtn" alignment="CENTER" onMouseClicked="#settingBtnClick" prefHeight="60.0" prefWidth="300.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-label" text="Setting" textAlignment="CENTER">
                            <font>
@@ -130,7 +149,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="300.0">
+                  <HBox fx:id="LogoutBtn" alignment="CENTER" onMouseClicked="#logout" prefHeight="60.0" prefWidth="300.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="60.0" prefWidth="274.0" styleClass="nav-btn-logout" text="Logout" textAlignment="CENTER">
                            <font>
@@ -150,7 +169,7 @@
             </VBox>
          </left>
          <center>
-            <AnchorPane fx:id="Content_pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="Content_pane" prefHeight="200.0" prefWidth="1035.0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="35.0" left="20.0" right="20.0" top="35.0" />
                </BorderPane.margin>
